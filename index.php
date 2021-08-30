@@ -19,19 +19,19 @@ $allow_show_folders = false; // Defina como false para ocultar todos os subdiret
 $disallowed_patterns = ['*.php'];  // 
 $hidden_patterns = ['*.php','.*']; // Extensões ocultas no índice do diretório
 
-$PASSWORD = '';  // Defina a senha, para acessar o gerenciador de arquivos ... (opcional)
+$SENHA = '';  // Defina a senha, para acessar o gerenciador de arquivos ... (opcional)
 
-if($PASSWORD) {
+if($SENHA) {
 
 	session_start();
 	if(!$_SESSION['_sfm_allowed']) {
 		// sha1, and random bytes to thwart timing attacks.  Not meant as secure hashing.
 		$t = bin2hex(openssl_random_pseudo_bytes(10));
-		if($_POST['p'] && sha1($t.$_POST['p']) === sha1($t.$PASSWORD)) {
+		if($_POST['p'] && sha1($t.$_POST['p']) === sha1($t.$SENHA)) {
 			$_SESSION['_sfm_allowed'] = true;
 			header('Location: ?');
 		}
-		echo '<html><body><form action=? method=post>PASSWORD:<input type=password name=p autofocus/></form></body></html>';
+		echo '<html><body><form action=? method=post>SENHA:<input type=password name=p autofocus/></form></body></html>';
 		exit;
 	}
 }
@@ -493,5 +493,5 @@ $(function(){
 </tr></thead><tbody id="list">
 
 </tbody></table>
-<footer>simple php filemanager by <a href="https://github.com/pandolfipedro">pandolfipedro</a></footer>
+<footer>simple php filemanager by <a href="https://github.com/pandolfipedro/simple-php-filemanager">pandolfipedro</a></footer>
 </body></html>
