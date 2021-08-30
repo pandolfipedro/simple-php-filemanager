@@ -15,7 +15,7 @@ Opções de Segurança
 
 - hidden_patterns // Extensões ocultas no índice do diretório
 
-- PASSWORD = // Defina a senha, para acessar o gerenciador de arquivos ... (opcional)
+- SENHA = // Defina a senha, para acessar o gerenciador de arquivos ... (opcional)
 
 
 Edite o título do site em <title>
